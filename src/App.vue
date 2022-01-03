@@ -2,16 +2,19 @@
   <div id="app">
     <div class="container">
         <Header/>
+        <Footer/>
     </div>
   </div>
 </template>
 
 <script>
-import Header from "@/components/Header";
+  import Footer from "@/components/Footer";
+  import Header from "@/components/Header";
 
-export default {
-  components: { Header },
-}
+
+  export default {
+    components: { Footer, Header }
+  }
 </script>
 
 <style lang="scss">
