@@ -19,8 +19,9 @@
     display: flex;
     flex-grow: 0;
     padding: 30px 20px;
-    /*margin: 100px 0 0 0;*/
+    margin: 40px 0 0 0;
     box-shadow: $topShadow;
+    background: $white;
 }
 .footer-container {
     width: 100%;
