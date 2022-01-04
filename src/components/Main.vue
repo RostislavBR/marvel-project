@@ -6,12 +6,15 @@
                 <button class="search-button">search</button>
             </div>
         </div>
+        <CharactersGrid/>
     </main>
 </template>
 
 <script>
+    import CharactersGrid from "@/components/CharactersGrid";
     export default {
-        name: "Main"
+        name: "Main",
+        components: { CharactersGrid }
     }
 </script>
 
