@@ -15,13 +15,18 @@
 </script>
 
 <style lang="scss">
+.footer {
+    display: flex;
+    flex-grow: 0;
+    padding: 30px 20px;
+    /*margin: 100px 0 0 0;*/
+    box-shadow: $topShadow;
+}
 .footer-container {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 30px 20px;
-    box-shadow: $topShadow;
 }
 .footer-text {
     font-size: $middleSize;
