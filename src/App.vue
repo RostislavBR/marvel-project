@@ -1,19 +1,19 @@
 <template>
   <div id="app">
-    <div class="container">
-        <Header/>
-        <Footer/>
-    </div>
+      <Header/>
+      <Main/>
+      <Footer/>
   </div>
 </template>
 
 <script>
   import Footer from "@/components/Footer";
   import Header from "@/components/Header";
+  import Main from "@/components/Main";
 
 
   export default {
-    components: { Footer, Header }
+    components: {Main, Footer, Header }
   }
 </script>
 
@@ -22,15 +22,24 @@
       font-family: $fontFamily;
       src: url('fonts/Roboto-Light.ttf');
   }
-
+  @font-face {
+      font-family: $fontFamily;
+      src: url('fonts/Roboto-Bold.ttf');
+  }
  * {
    font-family: $fontFamily;
    margin: 0;
    padding: 0;
  }
-.container {
-    width: 1920px;
+body, html {
+    width: 100%;
     height: 100%;
-    margin: 0 auto;
+    background-color: $grey;
+}
+#app {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
 }
 </style>
