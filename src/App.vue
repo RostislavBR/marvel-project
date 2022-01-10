@@ -13,7 +13,7 @@
 
 
   export default {
-    components: {Main, Footer, Header }
+    components: { Main, Footer, Header },
   }
 </script>
 
