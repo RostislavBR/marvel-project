@@ -2,14 +2,16 @@
     <div class="characters-container">
         <h2 class="characters-title">characters</h2>
         <div class="characters-grid">
-            <div :class="['grid-item', `grid-item-${i + 1}`]" v-for="(item, i) in 14" :key="item.id">{{i}}</div>
+            <div :class="['grid-item', `grid-item-${i + 1}`]" v-for="(item, i) in 14" :key="item.id">
+                <span class="characters-name">Characters Name</span>
+            </div>
         </div>
     </div>
 </template>
 
 <script>
     export default {
-        name: "CharactersGrid"
+        name: "CharactersGrid",
     }
 </script>
 
@@ -37,6 +39,11 @@
         grid-gap: 20px;
     }
     .grid-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 20px;
+        box-sizing: border-box;
         background: $grey;
         border: 2px solid $black;
         font-size: $bigSize;
@@ -66,5 +73,13 @@
     }
     .grid-item-12 {
         grid-column: span 2;
+    }
+    .characters-name {
+        display: block;
+        width: 100%;
+        text-align: left;
+        font-size: $characterSize;
+        font-weight: $bolderFontWeight;
+        color: $white;
     }
 </style>
