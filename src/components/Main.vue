@@ -7,14 +7,16 @@
             </div>
         </div>
         <CharactersGrid/>
+        <SkeletonAnimation/>
     </main>
 </template>
 
 <script>
     import CharactersGrid from "@/components/CharactersGrid";
+    import SkeletonAnimation from "@/components/SkeletonAnimation";
     export default {
         name: "Main",
-        components: { CharactersGrid }
+        components: { SkeletonAnimation, CharactersGrid }
     }
 </script>
 
