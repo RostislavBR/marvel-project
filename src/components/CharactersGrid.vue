@@ -1,9 +1,10 @@
 <template>
     <div class="characters-container">
-        <h2 class="characters-title">characters</h2>
         <div class="characters-grid">
-            <div :class="['grid-item', `grid-item-${i + 1}`]" v-for="(item, i) in 14" :key="item.id">
-                <span class="characters-name">Characters Name</span>
+            <div :class="['grid-item', `grid-item-${i + 1}`]" v-for="({id, name, thumbnail}, i) in characters" :key="id" :style="{backgroundImage: `url(${thumbnail.path}.${thumbnail.extension})`, color: '#000000' }">
+                <router-link :to="{name: 'character', path: `/character/${id}`, params: { id } }">
+                    <span class="characters-name">{{ name }}</span>
+                </router-link>
             </div>
         </div>
     </div>
@@ -12,6 +13,7 @@
 <script>
     export default {
         name: "CharactersGrid",
+        props: ['characters'],
     }
 </script>
 
@@ -25,13 +27,6 @@
         padding: 20px;
         background: $white;
     }
-    .characters-title {
-        font-size: $bigSize;
-        font-weight: $boldFontWeight;
-        color: $characterColor;
-        text-transform: uppercase;
-        margin: 40px 0 36px 0;
-    }
     .characters-grid {
         display: grid;
         grid-template-columns: repeat(6, 1fr);
@@ -44,7 +39,9 @@
         justify-content: flex-end;
         padding: 20px;
         box-sizing: border-box;
-        background: $grey;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
         border: 2px solid $black;
         font-size: $bigSize;
         text-align: center;

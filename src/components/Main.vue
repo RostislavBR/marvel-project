@@ -6,17 +6,25 @@
                 <button class="search-button">search</button>
             </div>
         </div>
-        <CharactersGrid/>
-        <SkeletonAnimation/>
+        <CharactersGrid v-if="characters && characters.length > 0" :characters="characters"/>
+        <SkeletonAnimation v-else/>
     </main>
 </template>
 
 <script>
     import CharactersGrid from "@/components/CharactersGrid";
     import SkeletonAnimation from "@/components/SkeletonAnimation";
+    import { mapGetters } from "vuex"
+
     export default {
         name: "Main",
-        components: { SkeletonAnimation, CharactersGrid }
+        components: { SkeletonAnimation, CharactersGrid },
+        computed: {
+            ...mapGetters({ characters: 'getCharacters' }),
+        },
+        mounted() {
+            console.log(this.characters);
+        }
     }
 </script>
 
