@@ -10,10 +10,16 @@
   import Footer from "@/components/Footer";
   import Header from "@/components/Header";
   import Main from "@/components/Main";
-
+  import { mapActions  } from "vuex";
 
   export default {
     components: { Main, Footer, Header },
+    methods: {
+        ...mapActions(['getCharacters']),
+    },
+    created() {
+        this.getCharacters();
+    },
   }
 </script>
 
