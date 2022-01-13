@@ -20,6 +20,7 @@
     left: 0;
     right: 0;
     box-shadow: $bottomShadow;
+    background: $white;
 }
 .header-container {
     display: flex;
