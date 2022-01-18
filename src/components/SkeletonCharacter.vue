@@ -1,0 +1,53 @@
+<template>
+    <div class="character-header">
+        <div class="character-box-img skeleton">
+            <img src="" alt="">
+        </div>
+        <div class="character-box-name">
+            <span class="character-top-title skeleton-top-title skeleton"></span>
+            <SkeletonTitle/>
+        </div>
+    </div>
+</template>
+
+<script>
+    import SkeletonTitle from "@/components/SkeletonTitle";
+    export default {
+        name: "SkeletonAnimationHeader",
+        components: { SkeletonTitle,  }
+    }
+</script>
+
+<style lang="scss">
+    .character-header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 20px;
+        margin: 0 0 20px 0;
+        background: $boxInputBackground;
+    }
+    .character-box-img {
+        min-width: 400px;
+        min-height: 400px;
+        background: $grey;
+        box-shadow: $boxInputShadow;
+    }
+    .skeleton {
+        animation: skeleton-loading 1.5s linear infinite alternate;
+    }
+    .skeleton-top-title {
+        display: block;
+        background: $lightGrey;
+        padding: 10px 0;
+        width: 200px;
+    }
+    @keyframes skeleton-loading {
+        0% {
+            background-color: $lightGrey;
+        }
+        100% {
+            background-color: $white;
+        }
+    }
+</style>
