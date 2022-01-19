@@ -1,0 +1,21 @@
+<template>
+    <div class="comics-grid">
+        <slot>
+        </slot>
+    </div>
+</template>
+
+<script>
+    export default {
+        name: "ComicsGrid"
+    }
+</script>
+
+<style lang="scss">
+    .comics-grid {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 2fr);
+        grid-gap: 20px;
+    }
+</style>
