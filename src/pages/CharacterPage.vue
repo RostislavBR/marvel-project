@@ -37,7 +37,7 @@
         flex-direction: column;
         width: 1238px;
         /*max-height: 832px;*/
-        margin: 0 auto;
+        margin: 120px auto 0 auto;
         background: $white;
     }
     .character-main {
