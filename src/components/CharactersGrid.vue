@@ -2,7 +2,7 @@
     <div class="characters-container">
         <div class="characters-grid">
             <div :class="['grid-item', `grid-item-${i + 1}`]" v-for="({id, name, thumbnail}, i) in characters" :key="id" :style="{ backgroundImage: `url(${thumbnail.path}.${thumbnail.extension})` }">
-                <router-link :to="{name: 'character', path: `/character/${id}`, params: { id } }" :style="{ textDecoration: 'none' }" class="grid-item-link"/>
+                <router-link :to="{ path: `/character/${id}` }" :style="{ textDecoration: 'none' }" class="grid-item-link"/>
                 <span class="characters-name">{{ name }}</span>
             </div>
         </div>
