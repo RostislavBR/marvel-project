@@ -2,9 +2,8 @@
     <div class="characters-container">
         <div class="characters-grid">
             <div :class="['grid-item', `grid-item-${i + 1}`]" v-for="({id, name, thumbnail}, i) in characters" :key="id" :style="{ backgroundImage: `url(${thumbnail.path}.${thumbnail.extension})` }">
-                <router-link :to="{name: 'character', path: `/character/${id}`, params: { id } }" :style="{ textDecoration: 'none' }">
-                    <span class="characters-name">{{ name }}</span>
-                </router-link>
+                <router-link :to="{ path: `/character/${id}` }" :style="{ textDecoration: 'none' }" class="grid-item-link"/>
+                <span class="characters-name">{{ name }}</span>
             </div>
         </div>
     </div>
@@ -34,6 +33,7 @@
         grid-gap: 20px;
     }
     .grid-item {
+        position: relative;
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
@@ -51,6 +51,14 @@
         min-width: 183px;
         min-height: 183px;
     }
+    .grid-item-link {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
     .grid-item-1 {
         grid-column: span 2;
         grid-row: span 2;

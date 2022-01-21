@@ -13,16 +13,42 @@ export default new Vuex.Store({
             code: null,
             isLoading: true,
         },
+        characterInfo: {
+            items: [],
+            status: null,
+            code: null,
+            isLoading: true,
+        },
+        comicsInfo: {
+            items: [],
+            status: null,
+            code: null,
+            isLoading: true,
+        }
     },
     mutations: {
       setCharacters(state, payload) {
           state.characters.items = payload.data.results;
           console.log(payload);
       },
+      setCharacterInfo(state, payload) {
+          state.characterInfo.items = payload.data.results;
+          console.log(payload)
+      },
+        setComicsInfo(state, payload) {
+            state.comicsInfo.items = payload.data.results;
+            console.log(payload)
+        },
     },
     getters: {
       getCharacters(state) {
           return state.characters.items
+      },
+      getCharacterInfo(state) {
+          return state.characterInfo.items
+      },
+      getComicsInfo(state) {
+          return state.characterInfo.items
       }
     },
     actions: {
@@ -31,10 +57,26 @@ export default new Vuex.Store({
                 .then(response => {
                     return response.json()
                 })
-                // .then(response => this.characters = response)
                 .then(response => {
                     context.commit("setCharacters", response);
-                    console.log(response);
+                });
+        },
+        getCharacterInfo(context, payload) {
+            fetch(`${ API_URL.characters }/${ payload }?apikey=${ process.env.VUE_APP_PUBLIC_API_KEY }`)
+                .then(response => {
+                    return response.json()
+                })
+                .then(response => {
+                    context.commit("setCharacterInfo", response)
+                });
+        },
+        getCharacterComics(context, payload) {
+            fetch(`${ API_URL.characters }/${ payload }/comics?apikey=${ process.env.VUE_APP_PUBLIC_API_KEY }`)
+                .then(response => {
+                    return response.json()
+                })
+                .then(response => {
+                    context.commit("setComicsInfo", response)
                 });
         },
     },

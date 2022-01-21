@@ -1,7 +1,7 @@
 <template>
   <div id="app">
       <Header/>
-      <Main/>
+      <router-view/>
       <Footer/>
   </div>
 </template>
@@ -9,11 +9,10 @@
 <script>
   import Footer from "@/components/Footer";
   import Header from "@/components/Header";
-  import Main from "@/components/Main";
   import { mapActions  } from "vuex";
 
   export default {
-    components: { Main, Footer, Header },
+    components: {  Footer, Header },
     methods: {
         ...mapActions(['getCharacters']),
     },
