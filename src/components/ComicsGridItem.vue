@@ -1,14 +1,18 @@
 <template>
     <div class="comics-grid-item">
-        <span class="comics-title">Dark Avengers - Ares</span>
-        <div class="comics-grid-image">
+        <h3 class="comics-title">{{ comicsTitle }}</h3>
+        <div class="comics-grid-image" :style="{ backgroundImage: `url(${ comicsImage.path }.${ comicsImage.extension })` }">
         </div>
     </div>
 </template>
 
 <script>
     export default {
-        name: "ComicsGridItem"
+        props: ['comicsTitle', 'comicsImage'],
+        name: "ComicsGridItem",
+        mounted() {
+            console.log(this.comicsTitle, this.comicsImage)
+        }
     }
 </script>
 
@@ -24,10 +28,9 @@
     .comics-grid-image {
         min-height: 486px;
         box-sizing: border-box;
-        /*background-size: cover;*/
-        /*background-position: center center;*/
-        /*background-repeat: no-repeat;*/
-        background: $grey;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
         box-shadow: $gridItemShadow;
         border: none;
     }
