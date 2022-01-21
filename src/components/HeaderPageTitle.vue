@@ -1,10 +1,11 @@
 <template>
-    <h1 class="character-header-name">Ares</h1>
+    <h1 class="character-header-name">{{ name }}</h1>
 </template>
 
 <script>
     export default {
-        name: "HeaderPageTitle"
+        name: "HeaderPageTitle",
+        props: ['name'],
     }
 </script>
 
@@ -12,7 +13,7 @@
     .character-header-name {
         font-size: $characterNameFontSize;
         font-weight: $boldFontWeight;
-        line-height: $bigLineHeight;
+        line-height: $biggerLineHeight;
         text-transform: uppercase;
     }
 </style>
