@@ -23,6 +23,7 @@
     right: 0;
     box-shadow: $bottomShadow;
     background: $white;
+    z-index: 10;
 }
 .header-container {
     display: flex;
