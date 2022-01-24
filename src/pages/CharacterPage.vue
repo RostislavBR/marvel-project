@@ -1,6 +1,6 @@
 <template>
     <div class="character-page-container">
-        <CharacterPageHeader :info="info"/>
+        <CharacterPageHeader :name="info[0].name" :image="info[0].thumbnail"/>
         <div class="character-main">
             <div class="character-biography-box">
                 <CharacterMainTitle/>
@@ -10,8 +10,8 @@
                 <CharacterMainTitle/>
             </div>
             <div class="comics-grid-container">
-                <ComicsGrid>
-                    <ComicsGridItem v-for="item in comics[0].comics.items" :key="item.id" :comicsTitle="comics[0].comics.items[0].name" :comicsImage="comics[0].thumbnail"/>
+                <ComicsGrid v-if="comics">
+                    <ComicsGridItem v-for="comics in comics" :key="comics.id" :comicsTitle="comics.title" :comicsImage="comics.thumbnail"/>
                 </ComicsGrid>
             </div>
         </div>
@@ -39,15 +39,15 @@
           // getComicsNameId() {
           //   return this.comics[0].comics.items.forEach((item, i) => { item.id = i + 1 })
           // },
-          ...mapGetters({ info:'getCharacterInfo', comics: 'getComicsInfo'})
+          ...mapGetters({ info:'getCharacterInfo', comics: 'getComicsInfo'}),
         },
         created() {
             this.getCharacterInfo(this.getCharacterId);
             this.getCharacterComics(this.getCharacterId);
         },
-        mounted() {
+       mounted() {
             console.log(this.comics)
-        }
+       }
     }
 </script>
 
