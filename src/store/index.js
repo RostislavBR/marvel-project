@@ -29,15 +29,12 @@ export default new Vuex.Store({
     mutations: {
       setCharacters(state, payload) {
           state.characters.items = payload.data.results;
-          console.log(payload);
       },
       setCharacterInfo(state, payload) {
           state.characterInfo.items = payload.data.results;
-          console.log(payload)
       },
-        setComicsInfo(state, payload) {
-            state.comicsInfo.items = payload.data.results;
-            console.log(payload)
+        setComicsInfo(state, {data}) {
+            state.comicsInfo.items = data.results;
         },
     },
     getters: {
@@ -48,7 +45,7 @@ export default new Vuex.Store({
           return state.characterInfo.items
       },
       getComicsInfo(state) {
-          return state.characterInfo.items
+          return state.comicsInfo.items
       }
     },
     actions: {

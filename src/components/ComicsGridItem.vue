@@ -1,6 +1,6 @@
 <template>
     <div class="comics-grid-item">
-        <h3 class="comics-title">{{ comicsTitle }}</h3>
+        <h3 class="comics-title">{{ comicsTitle | cutLongText(29, '...') }}</h3>
         <div class="comics-grid-image" :style="{ backgroundImage: `url(${ comicsImage.path }.${ comicsImage.extension })` }">
         </div>
     </div>
@@ -10,8 +10,14 @@
     export default {
         props: ['comicsTitle', 'comicsImage'],
         name: "ComicsGridItem",
-        mounted() {
-            console.log(this.comicsTitle, this.comicsImage)
+        filters: {
+            cutLongText(text, length, suffix) {
+                if(text.length > length) {
+                    return text.substring(0, length) + suffix;
+                } else {
+                    return text;
+                }
+            },
         }
     }
 </script>

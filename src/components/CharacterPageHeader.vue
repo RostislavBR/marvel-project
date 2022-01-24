@@ -1,10 +1,10 @@
 <template>
     <div class="character-header">
-        <div class="character-box-img" :style="{ backgroundImage: `url(${info[0].thumbnail.path}.${info[0].thumbnail.extension})` }">
+        <div class="character-box-img" :style="{ backgroundImage: `url(${image.path}.${image.extension})` }">
         </div>
         <div class="character-box-name">
             <span class="character-top-title">Character</span>
-            <HeaderPageTitle :name="info[0].name"/>
+            <HeaderPageTitle :name="name"/>
         </div>
     </div>
 </template>
@@ -12,19 +12,9 @@
 <script>
     import HeaderPageTitle from "@/components/HeaderPageTitle";
     export default {
-        props: ['info'],
+        props: ['name', 'image'],
         name: "CharacterPageHeader",
         components: { HeaderPageTitle },
-        // computed: {
-        //   style() {
-        //       return {
-        //           '--backgroundImage': this.info[0].th
-        //       }
-        //   }
-        // },
-        mounted() {
-            console.log(this.info);
-        }
     }
 </script>
 
