@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Main from "@/components/Main";
 import CharacterPage from "@/pages/CharacterPage";
+import NotFoundPage from "@/pages/NotFoundPage";
 
 Vue.use(VueRouter);
 
