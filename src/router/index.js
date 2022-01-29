@@ -10,6 +10,7 @@ const routes = [
   { name: "Home", component: Main, path: "/" },
   { name: "About", path: "/about" },
   { name: "Character", component: CharacterPage, path: "/character/:id" },
+  { name: "NotFoundPage", component: NotFoundPage, path: "*" },
 ];
 
 const router = new VueRouter({
