@@ -1,6 +1,6 @@
 <template>
     <div class="character-page-container">
-        <CharacterPageHeader/>
+        <CharacterPageHeader :name="info[0].name" :image="info[0].thumbnail"/>
         <div class="character-main">
             <div class="character-biography-box">
                 <CharacterMainTitle/>
@@ -10,8 +10,8 @@
                 <CharacterMainTitle/>
             </div>
             <div class="comics-grid-container">
-                <ComicsGrid>
-                    <ComicsGridItem v-for="item in 3" :key="item.id"/>
+                <ComicsGrid v-if="comics">
+                    <ComicsGridItem v-for="comics in comics" :key="comics.id" :comicsTitle="comics.title" :comicsImage="comics.thumbnail"/>
                 </ComicsGrid>
             </div>
         </div>
@@ -24,10 +24,30 @@
     import MainText from "@/components/MainText";
     import ComicsGrid from "@/components/ComicsGrid";
     import ComicsGridItem from "@/components/ComicsGridItem";
+    import { mapActions, mapGetters } from "vuex";
 
     export default {
         name: "CharacterPage",
-        components: { ComicsGridItem, ComicsGrid, MainText, CharacterMainTitle, CharacterPageHeader }
+        components: { ComicsGridItem, ComicsGrid, MainText, CharacterMainTitle, CharacterPageHeader },
+        methods: {
+            ...mapActions(['getCharacterInfo', 'getCharacterComics']),
+        },
+        computed: {
+          getCharacterId() {
+              return this.$route.params.id;
+          },
+          // getComicsNameId() {
+          //   return this.comics[0].comics.items.forEach((item, i) => { item.id = i + 1 })
+          // },
+          ...mapGetters({ info:'getCharacterInfo', comics: 'getComicsInfo'}),
+        },
+        created() {
+            this.getCharacterInfo(this.getCharacterId);
+            this.getCharacterComics(this.getCharacterId);
+        },
+       mounted() {
+            console.log(this.comics)
+       }
     }
 </script>
 
