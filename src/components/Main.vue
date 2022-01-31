@@ -26,9 +26,6 @@
         computed: {
             ...mapGetters({ characters: 'getCharacters' }),
         },
-        mounted() {
-            console.log(this.characters);
-        }
     }
 </script>
 

@@ -24,18 +24,27 @@ export default new Vuex.Store({
             status: null,
             code: null,
             isLoading: true,
-        }
+        },
+        comics: {
+            items: [],
+            status: null,
+            code: null,
+            isLoading: true,
+        },
     },
     mutations: {
-      setCharacters(state, payload) {
-          state.characters.items = payload.data.results;
+      setCharacters(state, {data}) {
+          state.characters.items = data.results;
       },
-      setCharacterInfo(state, payload) {
-          state.characterInfo.items = payload.data.results;
+      setCharacterInfo(state, {data}) {
+          state.characterInfo.items = data.results;
       },
-        setComicsInfo(state, {data}) {
-            state.comicsInfo.items = data.results;
-        },
+      setComicsInfo(state, {data}) {
+          state.comicsInfo.items = data.results;
+      },
+      setComicsId(state, {data}) {
+          state.comics.items = data.results;
+      }
     },
     getters: {
       getCharacters(state) {
@@ -46,7 +55,10 @@ export default new Vuex.Store({
       },
       getComicsInfo(state) {
           return state.comicsInfo.items
-      }
+      },
+      getComicsId(state) {
+          return state.comics.items
+      },
     },
     actions: {
         getCharacters(context) {
@@ -74,6 +86,15 @@ export default new Vuex.Store({
                 })
                 .then(response => {
                     context.commit("setComicsInfo", response)
+                });
+        },
+        getComics(context, payload) {
+            fetch(`${ API_URL.comics }/${ payload }?apikey=${ process.env.VUE_APP_PUBLIC_API_KEY }`)
+                .then(response => {
+                    return response.json()
+                })
+                .then(response => {
+                    context.commit("setComicsId", response)
                 });
         },
     },
