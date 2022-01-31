@@ -11,7 +11,7 @@
             </div>
             <div class="comics-grid-container">
                 <ComicsGrid v-if="comics">
-                    <ComicsGridItem v-for="comics in comics" :key="comics.id" :comicsTitle="comics.title" :comicsImage="comics.thumbnail"/>
+                    <ComicsGridItem v-for="(comics, i) in comics" :key="comics.id" :comicsTitle="comics.title" :comicsId="comics.id" :comicsImage="comics.thumbnail" :class="['comics-grid-item', `comics-grid-item-${i + 1}`]"/>
                 </ComicsGrid>
             </div>
         </div>
@@ -45,15 +45,13 @@
             this.getCharacterInfo(this.getCharacterId);
             this.getCharacterComics(this.getCharacterId);
         },
-       mounted() {
-            console.log(this.comics)
-       }
     }
 </script>
 
 <style lang="scss">
     .character-page-container {
         display: flex;
+        flex-grow: 1;
         flex-direction: column;
         width: 1238px;
         /*max-height: 832px;*/
