@@ -27,7 +27,7 @@
 
     export default {
         name: "CharacterPage",
-        components: { ComicsGridItem, ComicsGrid, MainText, CharacterMainTitle, CharacterPageHeader }
+        components: { MainText, CharacterMainTitle, CharacterPageHeader, ComicsGrid, ComicsGridItem }
     }
 </script>
 
