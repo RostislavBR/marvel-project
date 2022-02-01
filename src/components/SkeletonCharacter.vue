@@ -1,6 +1,6 @@
 <template>
     <div class="character-header">
-        <div class="character-box-img skeleton">
+        <div class="character-box-img-skeleton skeleton">
         </div>
         <div class="character-box-name">
             <span class="character-top-title skeleton-top-title skeleton"></span>
@@ -26,7 +26,7 @@
         margin: 0 0 20px 0;
         background: $boxInputBackground;
     }
-    .character-box-img {
+    .character-box-img-skeleton {
         min-width: 400px;
         min-height: 400px;
         background: $grey;
