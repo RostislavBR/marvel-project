@@ -1,11 +1,10 @@
 <template>
     <div class="character-header">
-        <div class="character-box-img">
-            <img src="" alt="">
+        <div class="character-box-img" :style="{ backgroundImage: `url(${image.path}.${image.extension})` }">
         </div>
         <div class="character-box-name">
             <span class="character-top-title">Character</span>
-            <HeaderPageTitle/>
+            <HeaderPageTitle :name="name"/>
         </div>
     </div>
 </template>
@@ -13,8 +12,9 @@
 <script>
     import HeaderPageTitle from "@/components/HeaderPageTitle";
     export default {
+        props: ['name', 'image'],
         name: "CharacterPageHeader",
-        components: { HeaderPageTitle }
+        components: { HeaderPageTitle },
     }
 </script>
 
@@ -30,8 +30,11 @@
     .character-box-img {
         min-width: 400px;
         min-height: 400px;
-        background: $grey;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
         box-shadow: $boxInputShadow;
+        margin: 0 40px 0 0;
     }
     .character-box-name {
         display: flex;

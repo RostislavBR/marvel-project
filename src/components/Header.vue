@@ -1,7 +1,9 @@
 <template>
     <header class="header">
         <div class="header-container">
-            <img src="@/img/logo.png" alt="logo" class="header-logo">
+            <router-link to="/">
+                <img src="@/img/logo.png" alt="logo" class="header-logo">
+            </router-link>
             <span class="header-link">About</span>
         </div>
     </header>
@@ -21,6 +23,7 @@
     right: 0;
     box-shadow: $bottomShadow;
     background: $white;
+    z-index: 10;
 }
 .header-container {
     display: flex;
