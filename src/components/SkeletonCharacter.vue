@@ -1,7 +1,6 @@
 <template>
     <div class="character-header">
         <div class="character-box-img skeleton">
-            <img src="" alt="">
         </div>
         <div class="character-box-name">
             <span class="character-top-title skeleton-top-title skeleton"></span>
@@ -33,6 +32,12 @@
         background: $grey;
         box-shadow: $boxInputShadow;
     }
+    .character-box-name {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 67%;
+    }
     .skeleton {
         animation: skeleton-loading 1.5s linear infinite alternate;
     }
@@ -40,6 +45,7 @@
         display: block;
         background: $lightGrey;
         padding: 10px 0;
+        margin: 0 0 15px 0;
         width: 200px;
     }
     @keyframes skeleton-loading {
