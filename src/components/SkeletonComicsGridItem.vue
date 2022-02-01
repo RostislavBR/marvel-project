@@ -1,6 +1,6 @@
 <template>
     <div class="comics-grid-item">
-        <span class="comics-title">Dark Avengers - Ares</span>
+        <span class="comics-title">{{ comicsTitle | cutLongText(29, '...') }}</span>
         <div class="comics-grid-image skeleton">
         </div>
     </div>
@@ -8,6 +8,16 @@
 
 <script>
     export default {
+        props: ['comicsTitle'],
+        filters: {
+            cutLongText(text, length, suffix) {
+                if(text.length > length) {
+                    return text.substring(0, length) + suffix;
+                } else {
+                    return text;
+                }
+            },
+        },
     }
 </script>
 
