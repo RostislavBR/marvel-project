@@ -1,16 +1,16 @@
 <template>
-    <h1 class="character-header-name">{{ name }}</h1>
+    <h1 class="comics-header-name">{{ title }}</h1>
 </template>
 
 <script>
     export default {
-        name: "HeaderPageTitle",
-        props: ['name'],
+        name: "ComicsHeaderTitle",
+        props: ['title'],
     }
 </script>
 
 <style lang="scss">
-    .character-header-name {
+    .comics-header-name {
         font-size: $characterNameFontSize;
         font-weight: $boldFontWeight;
         line-height: $biggerLineHeight;

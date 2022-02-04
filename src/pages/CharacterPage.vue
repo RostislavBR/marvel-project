@@ -1,6 +1,7 @@
 <template>
     <div class="character-page-container">
-        <CharacterPageHeader/>
+        <CharacterPageHeader :name="info[0].name" :image="info[0].thumbnail" v-if="info && info.length > 0"/>
+        <SkeletonCharacter v-else/>
         <div class="character-main">
             <div class="character-biography-box">
                 <CharacterMainTitle/>
@@ -10,9 +11,12 @@
                 <CharacterMainTitle/>
             </div>
             <div class="comics-grid-container">
-                <ComicsGrid>
-                    <ComicsGridItem v-for="item in 3" :key="item.id"/>
+                <ComicsGrid v-if="comics && comics.length > 0">
+                    <ComicsGridItem v-for="(comics, i) in comics" :key="comics.id" :comicsTitle="comics.title" :comicsId="comics.id" :comicsImage="comics.thumbnail" :class="['comics-grid-item', `comics-grid-item-${i + 1}`]"/>
                 </ComicsGrid>
+                <SkeletonComicsGrid v-else>
+                    <SkeletonComicsGridItem v-for="comics in comics" :key="comics.id" :comicsTitle="comics.title"/>
+                </SkeletonComicsGrid>
             </div>
         </div>
     </div>
@@ -24,20 +28,41 @@
     import MainText from "@/components/MainText";
     import ComicsGrid from "@/components/ComicsGrid";
     import ComicsGridItem from "@/components/ComicsGridItem";
+    import { mapActions, mapGetters } from "vuex";
+    import SkeletonCharacter from "@/components/SkeletonCharacter";
+    import SkeletonComicsGrid from "@/components/SkeletonComicsGrid";
+    import SkeletonComicsGridItem from "@/components/SkeletonComicsGridItem";
 
     export default {
         name: "CharacterPage",
-        components: { ComicsGridItem, ComicsGrid, MainText, CharacterMainTitle, CharacterPageHeader }
+        components: { SkeletonComicsGrid, SkeletonComicsGridItem, SkeletonCharacter, ComicsGridItem, ComicsGrid, MainText, CharacterMainTitle, CharacterPageHeader },
+        methods: {
+            ...mapActions(['getCharacterInfo', 'getCharacterComics']),
+        },
+        computed: {
+          getCharacterId() {
+              return this.$route.params.id;
+          },
+          // getComicsNameId() {
+          //   return this.comics[0].comics.items.forEach((item, i) => { item.id = i + 1 })
+          // },
+          ...mapGetters({ info:'getCharacterInfo', comics: 'getComicsInfo'}),
+        },
+        created() {
+            this.getCharacterInfo(this.getCharacterId);
+            this.getCharacterComics(this.getCharacterId);
+        },
     }
 </script>
 
 <style lang="scss">
     .character-page-container {
         display: flex;
+        flex-grow: 1;
         flex-direction: column;
         width: 1238px;
         /*max-height: 832px;*/
-        margin: 0 auto;
+        margin: 120px auto 0 auto;
         background: $white;
     }
     .character-main {

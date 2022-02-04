@@ -1,13 +1,12 @@
 <template>
     <div class="comics-grid">
-        <slot>
-        </slot>
+        <slot></slot>
     </div>
 </template>
 
 <script>
     export default {
-        name: "ComicsGrid"
+        name: "SkeletonComicsGrid",
     }
 </script>
 

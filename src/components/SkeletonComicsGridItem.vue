@@ -1,16 +1,14 @@
 <template>
     <div class="comics-grid-item">
-        <h3 class="comics-title">{{ comicsTitle | cutLongText(29, '...') }}</h3>
-        <div class="comics-grid-image" :style="{ backgroundImage: `url(${ comicsImage.path }.${ comicsImage.extension })` }">
-            <router-link :to="{ path: `/comics/${comicsId}` }" class="comics-item-link" :style="{ textDecoration: 'none' }"></router-link>
+        <span class="comics-title">{{ comicsTitle | cutLongText(29, '...') }}</span>
+        <div class="comics-grid-image skeleton">
         </div>
     </div>
 </template>
 
 <script>
     export default {
-        props: ['comicsTitle', 'comicsImage', 'comicsId'],
-        name: "ComicsGridItem",
+        props: ['comicsTitle'],
         filters: {
             cutLongText(text, length, suffix) {
                 if(text.length > length) {
@@ -33,20 +31,28 @@
         margin: 0 0 10px 0;
     }
     .comics-grid-image {
-        position: relative;
         min-height: 486px;
         box-sizing: border-box;
-        background-size: cover;
-        background-position: center center;
-        background-repeat: no-repeat;
+        background: $grey;
         box-shadow: $gridItemShadow;
         border: none;
     }
-    .comics-item-link {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
+    .skeleton {
+        animation: skeleton-loading 1.5s linear infinite alternate;
+    }
+    .skeleton-top-title {
+        display: block;
+        background: $lightGrey;
+        padding: 10px 0;
+        margin: 0 0 15px 0;
+        width: 200px;
+    }
+    @keyframes skeleton-loading {
+        0% {
+            background-color: $lightGrey;
+        }
+        100% {
+            background-color: $white;
+        }
     }
 </style>
