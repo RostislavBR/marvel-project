@@ -5,7 +5,7 @@
         </div>
         <div class="search-results" v-if="heroName && heroName.length > 0">
             <div class="results-item" v-for="{id, name} in heroName" :key="id">
-                <router-link :to="{ name: 'character', path: `/character/${id}`, params: { id } }" :style="{ textDecoration: 'none', color: '#000000'}">{{ name }}</router-link>
+                <router-link :to="{ path: `/character/${id}` }" :style="{ textDecoration: 'none', color: '#000000'}">{{ name }}</router-link>
             </div>
         </div>
     </div>
@@ -55,14 +55,17 @@
     }
     .search-results {
         position: absolute;
+        top: 460px;
         width: 798px;
+        max-height: 320px;
         background: $white;
         border-radius: $searchBorderRadius;
         z-index: 10;
+        overflow-y: scroll;
     }
     .results-item {
         padding: 10px 0 10px 0;
-        margin: 0 0 0 20px;
+        margin: 0 20px 0 20px;
         border-bottom: 1px solid $grey;
     }
 </style>
