@@ -13,17 +13,25 @@ export default new Vuex.Store({
             code: null,
             isLoading: true,
         },
+        charactersByName: {
+            items: [],
+        }
     },
     mutations: {
       setCharacters(state, payload) {
           state.characters.items = payload.data.results;
-          console.log(payload);
+      },
+      setCharactersByName(state, {data}) {
+        state.charactersByName.items = data.results;
       },
     },
     getters: {
       getCharacters(state) {
           return state.characters.items
-      }
+      },
+      getHeroByName(state) {
+          return state.charactersByName.items;
+      },
     },
     actions: {
         getCharacters(context) {
@@ -31,11 +39,18 @@ export default new Vuex.Store({
                 .then(response => {
                     return response.json()
                 })
-                // .then(response => this.characters = response)
                 .then(response => {
                     context.commit("setCharacters", response);
-                    console.log(response);
                 });
+        },
+        getCharactersByName(context, payload) {
+          fetch(`${ API_URL.characters }?nameStartsWith=${payload}&apikey=${ process.env.VUE_APP_PUBLIC_API_KEY }`)
+              .then(response => {
+                 return response.json()
+              })
+              .then(response => {
+                  context.commit("setCharactersByName", response);
+              });
         },
     },
 });
