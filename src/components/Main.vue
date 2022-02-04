@@ -39,8 +39,23 @@
         background-image: url('../img/banner.png');
         background-repeat: no-repeat;
         max-height: 800px;
-        max-width: 1920px;
+        width:100%;
         padding: 351px 0 355px 0;
         margin: 0 auto;
     }
+    @media (max-width: 1024px) {
+        .banner-box {
+            background-size: cover;
+            padding: 150px 0;
+            margin: 75px auto 0 auto;
+        }
+    }
+    @media (max-width: 767px) {
+        .banner-box {
+            background-size: cover;
+            padding: 100px 0;
+            margin: 75px auto 0 auto;
+        }
+    }
+
 </style>
