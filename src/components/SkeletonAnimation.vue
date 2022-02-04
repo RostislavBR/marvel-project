@@ -2,7 +2,7 @@
     <div class="characters-container">
         <div class="characters-grid">
             <div :class="['grid-item', `grid-item-${i + 1}`, 'skeleton']" v-for="(item, i) in 14" :key="item.id">
-                <span class="characters-name skeleton-name"></span>
+                <span class="characters-name skeleton-grid-name"></span>
             </div>
         </div>
     </div>
@@ -18,7 +18,7 @@
 .skeleton {
     animation: skeleton-loading 1.5s linear infinite alternate;
 }
-.skeleton-name {
+.skeleton-grid-name {
     background: $grey;
     padding: 10px 0;
     width: 120px;
