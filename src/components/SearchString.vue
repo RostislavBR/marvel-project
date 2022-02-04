@@ -68,4 +68,26 @@
         margin: 0 20px 0 20px;
         border-bottom: 1px solid $grey;
     }
+    @media (max-width: 1024px) {
+        .search-string {
+            width: 550px;
+        }
+        .search-results {
+            top: 330px;
+            width: 608px;
+        }
+    }
+    @media (max-width: 767px) {
+        .search-box {
+            padding: 10px;
+        }
+        .search-string {
+            width: 280px;
+            padding: 10px 0 10px 10px;
+        }
+        .search-results {
+            top: 250px;
+            width: 312px;
+        }
+    }
 </style>

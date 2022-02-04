@@ -23,4 +23,21 @@
     text-transform: uppercase;
     margin: 40px 0;
 }
+@media (max-width: 1024px) {
+    .characters-header-container {
+        width: 768px;
+    }
+    .characters-title {
+        margin: 30px 0;
+    }
+}
+@media (max-width: 767px) {
+    .characters-header-container {
+        width: 320px;
+    }
+    .characters-title {
+        font-size: 35px;
+        margin: 20px 0;
+    }
+}
 </style>

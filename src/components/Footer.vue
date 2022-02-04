@@ -16,6 +16,7 @@
 
 <style lang="scss">
 .footer {
+    width: 100%;
     display: flex;
     flex-grow: 0;
     padding: 30px 20px;
@@ -33,5 +34,10 @@
     font-size: $middleSize;
     font-weight: $lightFontWeight;
     line-height: $middleLineHeight;
+}
+@media (max-width: 767px) {
+    .footer {
+        padding: 30px 0;
+    }
 }
 </style>

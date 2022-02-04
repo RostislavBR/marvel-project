@@ -87,4 +87,40 @@
         font-weight: $bolderFontWeight;
         color: $white;
     }
+    @media (max-width: 1024px) {
+        .characters-container {
+            width: 768px;
+            padding: 0;
+        }
+        .characters-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        .grid-item-1,
+        .grid-item-4,
+        .grid-item-5,
+        .grid-item-10,
+        .grid-item-11,
+        .grid-item-12 {
+            grid-column: span 1;
+            grid-row: span 1;
+        }
+    }
+    @media (max-width: 767px) {
+        .characters-container {
+            width: 320px;
+            padding: 0;
+        }
+        .characters-grid {
+            grid-template-columns: repeat(1, 1fr);
+        }
+        .grid-item-1,
+        .grid-item-4,
+        .grid-item-5,
+        .grid-item-10,
+        .grid-item-11,
+        .grid-item-12 {
+            grid-column: span 1;
+            grid-row: span 1;
+        }
+    }
 </style>
