@@ -16,7 +16,6 @@
 
 <style lang="scss">
 .footer {
-    width: 100%;
     display: flex;
     flex-grow: 0;
     padding: 30px 20px;
@@ -25,6 +24,7 @@
     background: $white;
 }
 .footer-container {
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
