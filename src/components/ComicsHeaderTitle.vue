@@ -17,11 +17,14 @@
         text-transform: uppercase;
     }
     @media (max-width: 1024px) {
-
+        .comics-header-name {
+            font-size: 37px;
+            line-height: 50px;
+        }
     }
     @media (max-width: 767px) {
         .comics-header-name {
-            font-size: $mobileFontSizeTitle;
+            font-size: 11px;
             line-height: $middleLineHeight;
         }
     }

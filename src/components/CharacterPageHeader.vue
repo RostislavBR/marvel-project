@@ -50,7 +50,15 @@
         margin: 0 0 30px 0;
     }
     @media (max-width: 1024px) {
-
+        .character-box-img {
+            min-width: 250px;
+            min-height: 250px;
+            margin: 0 20px 0 0;
+        }
+        .character-top-title {
+            font-size: $buttonSize;
+            margin: 0 0 15px 0;
+        }
     }
     @media (max-width: 767px) {
         .character-header {

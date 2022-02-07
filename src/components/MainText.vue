@@ -18,7 +18,9 @@
     }
 
     @media (max-width: 1024px) {
-
+        .character-biography-sub-title {
+            font-size: 15px;
+        }
     }
     @media (max-width: 767px) {
         .character-biography-sub-title {

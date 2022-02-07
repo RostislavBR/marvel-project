@@ -79,7 +79,15 @@
         flex-direction: row;
     }
     @media (max-width: 1024px) {
-
+        .character-page-container {
+            width: 768px;
+        }
+        .character-biography-box {
+            margin: 0 0 35px 0;
+        }
+        .comics-title-box {
+            margin: 0 0 25px 0;
+        }
     }
     @media (max-width: 767px) {
         .character-page-container {

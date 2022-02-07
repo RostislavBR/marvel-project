@@ -18,7 +18,11 @@
         color: $characterColor;
     }
     @media (max-width: 1024px) {
-
+        .character-biography-title,
+        .character-comics-title {
+            font-size: $mobileFontSizeTitle;
+            line-height: $middleLineHeight;
+        }
     }
     @media (max-width: 767px) {
         .character-biography-title,
