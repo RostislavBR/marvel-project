@@ -44,5 +44,8 @@
     line-height: $middleLineHeight;
 }
 @media (max-width: 767px) {
+    .header-link {
+        font-size: $buttonSize;
+    }
 }
 </style>

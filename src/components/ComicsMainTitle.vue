@@ -16,4 +16,13 @@
         text-transform: uppercase;
         color: $characterColor;
     }
+    @media (max-width: 1024px) {
+
+    }
+    @media (max-width: 767px) {
+        .comics-main-title {
+            font-size: $mobileFontSizeTitle;
+            line-height: $middleLineHeight;
+        }
+    }
 </style>

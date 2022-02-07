@@ -16,4 +16,13 @@
         color: $biographyColor;
         margin: 10px 0 0 0;
     }
+
+    @media (max-width: 1024px) {
+
+    }
+    @media (max-width: 767px) {
+        .character-biography-sub-title {
+            font-size: 14px;
+        }
+    }
 </style>

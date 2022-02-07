@@ -10,7 +10,7 @@
     }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
     .comics-grid {
         width: 100%;
         display: grid;

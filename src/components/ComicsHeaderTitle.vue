@@ -16,4 +16,13 @@
         line-height: $biggerLineHeight;
         text-transform: uppercase;
     }
+    @media (max-width: 1024px) {
+
+    }
+    @media (max-width: 767px) {
+        .comics-header-name {
+            font-size: $mobileFontSizeTitle;
+            line-height: $middleLineHeight;
+        }
+    }
 </style>
