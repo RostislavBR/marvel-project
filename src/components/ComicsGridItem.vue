@@ -49,4 +49,15 @@
         left: 0;
         right: 0;
     }
+    @media (max-width: 1024px) {
+        
+    }
+    @media (max-width: 767px) {
+        .comics-title {
+            font-size: $mobileComicsTitle;
+        }
+        .comics-grid-image {
+            min-height: 200px;
+        }
+    }
 </style>

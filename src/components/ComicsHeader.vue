@@ -42,4 +42,17 @@
         align-items: center;
         width: 67%;
     }
+    @media (max-width: 1024px) {
+
+    }
+    @media (max-width: 767px) {
+        .comics-header {
+            margin: 0;
+        }
+        .comics-box-img {
+            min-width: 100px;
+            min-height: 100px;
+            margin: 0 20px 0 0;
+        }
+    }
 </style>

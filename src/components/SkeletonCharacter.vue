@@ -17,7 +17,7 @@
     }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
     .character-header {
         display: flex;
         flex-direction: row;

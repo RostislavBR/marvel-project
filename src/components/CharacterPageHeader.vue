@@ -49,4 +49,21 @@
         line-height: $middleLineHeight;
         margin: 0 0 30px 0;
     }
+    @media (max-width: 1024px) {
+
+    }
+    @media (max-width: 767px) {
+        .character-header {
+            margin: 0;
+        }
+        .character-box-img {
+            min-width: 100px;
+            min-height: 100px;
+            margin: 0 20px 0 0;
+        }
+        .character-top-title {
+            font-size: 10px;
+            margin: 0 0 10px 0;
+        }
+    }
 </style>
