@@ -18,11 +18,14 @@
         margin: 10px 0 0 0;
     }
     @media (max-width: 1024px) {
-
+        .comics-text {
+            font-size: 14px;
+        }
     }
     @media (max-width: 767px) {
         .comics-text {
-            font-size: 14px;
+            font-size: 7px;
+            line-height: 10px;
         }
     }
 </style>

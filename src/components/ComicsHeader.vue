@@ -43,7 +43,10 @@
         width: 67%;
     }
     @media (max-width: 1024px) {
-
+        .comics-box-img {
+            min-width: 300px;
+            min-height: 300px;
+        }
     }
     @media (max-width: 767px) {
         .comics-header {

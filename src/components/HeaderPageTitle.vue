@@ -17,7 +17,10 @@
         text-transform: uppercase;
     }
     @media (max-width: 1024px) {
-
+        .character-header-name {
+            font-size: 70px;
+            line-height: 55px;
+        }
     }
     @media (max-width: 767px) {
         .character-header-name {

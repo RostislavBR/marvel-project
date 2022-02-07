@@ -50,7 +50,12 @@
         right: 0;
     }
     @media (max-width: 1024px) {
-        
+        .comics-title {
+            font-size: 15px;
+        }
+        .comics-grid-image {
+            min-height: 300px;
+        }
     }
     @media (max-width: 767px) {
         .comics-title {

@@ -17,12 +17,15 @@
         color: $characterColor;
     }
     @media (max-width: 1024px) {
-
+        .comics-main-title {
+            font-size: 25px;
+            line-height: $middleLineHeight;
+        }
     }
     @media (max-width: 767px) {
         .comics-main-title {
-            font-size: $mobileFontSizeTitle;
-            line-height: $middleLineHeight;
+            font-size: 11px;
+            line-height: 10px;
         }
     }
 </style>

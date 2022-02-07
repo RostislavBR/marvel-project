@@ -46,7 +46,9 @@
         padding: 20px;
     }
     @media (max-width: 1024px) {
-
+        .comics-container {
+            width: 768px;
+        }
     }
     @media (max-width: 767px) {
         .comics-container {
