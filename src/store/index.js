@@ -73,7 +73,7 @@ export default new Vuex.Store({
         getCharacters(context) {
             fetch(`${ API_URL.characters }?limit=14&offset=${renderRandomOffset(100)}&apikey=${ process.env.VUE_APP_PUBLIC_API_KEY }`)
                 .then(response => {
-                    return response.json()
+                    return response.json();
                 })
                 .then(response => {
                     context.commit("setCharacters", response);
@@ -82,37 +82,41 @@ export default new Vuex.Store({
         getCharacterInfo(context, payload) {
             fetch(`${ API_URL.characters }/${ payload }?apikey=${ process.env.VUE_APP_PUBLIC_API_KEY }`)
                 .then(response => {
-                    return response.json()
+                    return response.json();
                 })
                 .then(response => {
-                    context.commit("setCharacterInfo", response)
+                    context.commit("setCharacterInfo", response);
                 });
         },
         getCharacterComics(context, payload) {
             fetch(`${ API_URL.characters }/${ payload }/comics?apikey=${ process.env.VUE_APP_PUBLIC_API_KEY }`)
                 .then(response => {
-                    return response.json()
+                    return response.json();
                 })
                 .then(response => {
-                    context.commit("setComicsInfo", response)
+                    context.commit("setComicsInfo", response);
                 });
         },
         getComics(context, payload) {
             fetch(`${ API_URL.comics }/${ payload }?apikey=${ process.env.VUE_APP_PUBLIC_API_KEY }`)
                 .then(response => {
-                    return response.json()
+                    return response.json();
                 })
                 .then(response => {
-                    context.commit("setComicsId", response)
+                    context.commit("setComicsId", response);
                 });
         },
         getCharactersByName(context, payload) {
           fetch(`${ API_URL.characters }?nameStartsWith=${payload}&apikey=${ process.env.VUE_APP_PUBLIC_API_KEY }`)
               .then(response => {
-                 return response.json()
+                 return response.json();
               })
               .then(response => {
                   context.commit("setCharactersByName", response);
+              })
+              .catch(err => {
+                  console.log(err);
+                  context.commit("setCharactersByName", { data: { items: [] } });
               });
         },
     },
