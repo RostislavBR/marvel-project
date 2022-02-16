@@ -3,7 +3,7 @@
         <div class="search-box">
             <input type="text" class="search-string" placeholder="Captain America, Hulk, Thor..." v-model="message" v-on:keyup="onChangeHandler">
         </div>
-        <div class="search-results" v-if="heroName && heroName.length > 0">
+        <div class="search-results" v-if="heroName.length > 0 && message.length > 0">
             <div class="results-item" v-for="{id, name} in heroName" :key="id">
                 <router-link :to="{ path: `/character/${id}` }" :style="{ textDecoration: 'none', color: '#000000'}">{{ name }}</router-link>
             </div>
@@ -23,7 +23,9 @@
         },
         methods: {
             onChangeHandler() {
-                this.getCharactersByName(this.message);
+                if(this.message.length > 0) {
+                    this.getCharactersByName(this.message);
+                }
             },
             ...mapActions(['getCharactersByName']),
         },
