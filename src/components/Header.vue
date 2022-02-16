@@ -4,7 +4,6 @@
             <router-link to="/">
                 <img src="@/img/logo.png" alt="logo" class="header-logo">
             </router-link>
-            <span class="header-link">About</span>
         </div>
     </header>
 </template>
@@ -31,7 +30,7 @@
     justify-content: flex-end;
     align-items: center;
     position: relative;
-    padding: 28px 20px;
+    padding: 38px 20px;
 }
 .header-logo {
     position: absolute;
