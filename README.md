@@ -1,4 +1,4 @@
-# marvel
+# Marvel
 
 ## Project setup
 ```

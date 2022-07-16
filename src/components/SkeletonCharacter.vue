@@ -56,4 +56,16 @@
             background-color: $white;
         }
     }
+
+    @media (max-width: 767px) {
+        .character-box-img-skeleton {
+            min-width: 100px;
+            min-height: 100px;
+            margin: 0 20px 0 0;
+        }
+
+        .skeleton-top-title {
+            width: 160px;
+        }
+    }
 </style>

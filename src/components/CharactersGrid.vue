@@ -113,6 +113,11 @@
         .characters-grid {
             grid-template-columns: repeat(1, 1fr);
         }
+
+        .grid-item {
+            padding: 0;
+        }
+
         .grid-item-1,
         .grid-item-4,
         .grid-item-5,

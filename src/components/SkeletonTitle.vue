@@ -14,4 +14,11 @@
         padding: 15px 0;
         width: 576px;
     }
+
+    @media (max-width: 767px) {
+        .skeleton-name {
+            width: 180px;
+            padding: 10px 0;
+        }
+    }
 </style>
