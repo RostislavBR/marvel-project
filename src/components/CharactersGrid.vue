@@ -24,7 +24,7 @@
         /*max-height: 832px;*/
         margin: 0 auto;
         padding: 20px;
-        background: $white;
+        background: #e5e5e5;
     }
     .characters-grid {
         display: grid;

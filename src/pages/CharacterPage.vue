@@ -43,9 +43,6 @@
           getCharacterId() {
               return this.$route.params.id;
           },
-          // getComicsNameId() {
-          //   return this.comics[0].comics.items.forEach((item, i) => { item.id = i + 1 })
-          // },
           ...mapGetters({ info:'getCharacterInfo', comics: 'getComicsInfo'}),
         },
         created() {
