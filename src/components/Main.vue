@@ -38,6 +38,7 @@
         justify-content: center;
         background-image: url('../img/banner.png');
         background-repeat: no-repeat;
+        background-position: center;
         max-height: 800px;
         width:100%;
         padding: 351px 0 355px 0;
