@@ -36,7 +36,6 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 67%;
     }
     .skeleton {
         animation: skeleton-loading 1.5s linear infinite alternate;
@@ -57,11 +56,21 @@
         }
     }
 
+    @media (max-width: 1024px) {
+        .character-box-img-skeleton {
+            min-width: 250px;
+            min-height: 250px;
+        }
+        .skeleton-top-title {
+            width: 200px;
+        }
+    }
+
     @media (max-width: 767px) {
         .character-box-img-skeleton {
             min-width: 100px;
             min-height: 100px;
-            margin: 0 20px 0 0;
+            margin: 0 10px 0 0;
         }
 
         .skeleton-top-title {

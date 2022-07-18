@@ -15,6 +15,12 @@
         width: 576px;
     }
 
+    @media (max-width: 1024px) {
+        .skeleton-name {
+            width: 300px;
+        }
+    }
+
     @media (max-width: 767px) {
         .skeleton-name {
             width: 180px;
